@@ -1,0 +1,16 @@
+{
+    "dir": "ltr",
+    "display": "standalone",
+    "orientation": "any",
+    "start_url": "./",
+    "scope": "./",
+    "name": "蓝牙终端",
+    "short_name": "蓝牙终端",
+    "theme_color": "#2196f3",
+    "background_color": "#ffffff",
+    "icons": [{
+        "src": "android-chrome-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }]
+}

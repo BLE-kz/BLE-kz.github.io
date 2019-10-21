@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="True" name="HandheldFriendly" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json">
+    <title>蓝牙终端</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <div class="toolbar">
+            <div id="device-name" class="name">未连接</div>
+            <div class="buttons">
+                <button id="connect" type="button" aria-label="Connect">
+                    <i>连接蓝牙</i>
+                </button>
+                <button id="disconnect" type="button" aria-label="Disconnect">
+                    <i>断开蓝牙</i>
+                </button>
+            </div>
+        </div>
+
+        <div id="terminal" class="terminal"></div>
+        <form id="send-form" class="send-form">
+            <button onclick="send('a')">关</button> <button onclick="send('b')">开</button>
+            <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="输入发送内容">
+            <button type="submit" aria-label="Send">
+                <i>发送</i>
+            </button>
+        </form>
+    </div>
+    <script src="js/BluetoothTerminal.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker
+                    .register('sw.js', {
+                        scope: '/'
+                    })
+                    .then(function(registration) {})
+                    .catch(function(err) {
+                        // console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
