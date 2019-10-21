@@ -30,8 +30,11 @@
         </div>
 
         <div id="terminal" class="terminal"></div>
+        <div>
+            <button onclick="send('a')">开</button>
+            <button onclick="send('b')">关</button>
+        </div>
         <form id="send-form" class="send-form">
-            <button onclick="send('b')">关</button> <button onclick="send('a')">开</button>
             <input id="input" type="text" aria-label="Input" autocomplete="off" placeholder="输入发送内容">
             <button type="submit" aria-label="Send">
                 <i>发送</i>
